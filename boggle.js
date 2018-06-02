@@ -4,7 +4,7 @@ class Boggle {
   constructor() {
     // this.length = length | 4
     this.words = [];
-    this.dictionary = ['MAKAN', 'STAR', 'HOT', 'FAX', 'COOL', , 'PET', 'SEX', 'SUPER', 'LAW', 'TOS', 'TOY', 'HI', 'TURN', 'SAY', 'GOT', 'GIRL', 'GET', 'HELLO', 'PRICE', 'BRO', 'MEN', 'WHOA', 'SAY', 'BYE']
+    this.dictionary = ['MAKAN', 'STAR', 'HOT', 'FAX', 'COOL', 'PET', 'SEX', 'SUPER', 'LAW', 'TOS', 'TOY', 'HI', 'TURN', 'SAY', 'GOT', 'GIRL', 'GET', 'HELLO', 'PRICE', 'BRO', 'MEN', 'WHOA', 'SAY', 'BYE']
   }
 
 
