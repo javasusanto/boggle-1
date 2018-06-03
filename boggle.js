@@ -76,6 +76,7 @@ class BoggleBoard {
     let i = 1;
     newBoard[posX][posY] = '!';
     while (!isFound) {
+
       //right
       if (newBoard[posX][posY + 1] === dict[i] && newBoard[posX][posY + 1]) {
         posY = posY + 1;
@@ -140,6 +141,24 @@ class BoggleBoard {
     return isFound;
   }
 
+  arrayClone(arr) {
+    let i, copy;
+    if (Array.isArray(arr)) {
+      copy = arr.slice(0);
+      for (i = 0; i < copy.length; i++) {
+        copy[i] = this.arrayClone(copy[i]);
+      }
+      return copy;
+    }
+    else if (typeof arr === 'object') {
+      throw 'Cannot clone array containing an object!';
+    }
+    else {
+      return arr;
+    }
+  }
+
+}
 
 let boggle = new BoggleBoard(4);
 boggle.generateBoard();
