@@ -27,14 +27,27 @@ class Boggle {
   }
 
   wordChecker() {
-
+    var counter = 0
+    var correctArr = ['ADD', 'MOVE', 'EM', 'ANT', 'DEV', 'UDIN', 'NIAT', 'ADEM', 'AUNT']
+    var containArr = [this.checkDiagonal(), this.checkVertical(), this.checkHorizontal()]
+    var resultArr = []
+    for (let i = 0; i < containArr.length; i++) {
+      for (let j = 0; j < containArr[i].length; j++) {
+        for (let k = 0; k < correctArr.length; k++) {
+          if (containArr[i][j] === correctArr[k]) {
+            counter++
+            resultArr.push(containArr[i][j])
+            var result = 'You find the words: ' + resultArr + ' | your score is: ' + counter
+          }
+        }
+      }
+    }
+    return result
   }
 
   checkDiagonal() {
     var resultArr = []
     var strWord = ''
-    var counter = 0
-    var correct = ['ADD', 'MOVE', 'DEA', 'ANT', 'SET', 'UDIN', 'NIAT', 'ADEM', 'AUNT']
     // var board = this.shake(4)
     var board = this.testCaseCheck()
     for (let i = 0; i < board.length - 1; i++) {
@@ -74,16 +87,6 @@ class Boggle {
         }
       }
       // strWord = ''
-    }
-    // console.log(board)
-    var correctArr = []
-    for (let k = 0; k < resultArr.length; k++) {
-      for (let l = 0 ; l < correct.length; l++) {
-        if (resultArr[k] === correct[l]) {
-          correctArr.push(resultArr[k])
-          counter++
-        }
-      }
     }
     // return 'you find words: ' + correctArr + '   ||  total find: ' + counter
     return resultArr
@@ -140,6 +143,7 @@ class Boggle {
 var game = new Boggle()
 
 // console.log(game.shake(4))
-console.log(game.checkDiagonal())
-console.log(game.checkVertical())
-console.log(game.checkHorizontal())
+// console.log(game.checkDiagonal())
+// console.log(game.checkVertical())
+// console.log(game.checkHorizontal())
+console.log(game.wordChecker())
