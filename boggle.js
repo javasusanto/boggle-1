@@ -1,7 +1,7 @@
 'use strict';
 
 // var input = process.argv;
-//
+
 // var fs = require('fs');
 // var input = fs.readFileSync('data.js');
 
